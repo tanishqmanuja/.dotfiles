@@ -1,0 +1,12 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[package]
+disabled = true
+
+[os]
+disabled = true
+
+# Language Related Config
+[nodejs]
+detect_files = ['package.json']
