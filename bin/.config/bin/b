@@ -22,12 +22,6 @@ if [ -f ".b" ]; then
 	./.b "$@"
 fi
 
-if [ -z "$TMUX" ]; then
-	echo 'Not in tmux'
-else
-	tmux rename-window '👷'
-fi
-
 if [ -f package-lock.json ]; then
 	echo "npm run $BUILD_SCRIPT"
 	npm run "$BUILD_SCRIPT"
@@ -67,10 +61,8 @@ fi
 
 if [ $? -eq 0 ]; then
 	echo "Build successful"
-	tmux rename-window '👷✅'
 else
 	echo "Build failed"
-	tmux rename-window '👷❌'
 fi
 
 echo "Press 'q' or 'esc' to exit"
