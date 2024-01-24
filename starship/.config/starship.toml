@@ -10,3 +10,7 @@ disabled = true
 # Language Related Config
 [nodejs]
 detect_files = ['package.json']
+
+[directory.substitutions]
+'~/projects' = '@projects'
+'/home/tanishq/projects' = '@projects'
