@@ -4,15 +4,18 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 setopt appendhistory
 
+# keybindings
+bindkey -s '^F' 't^M'
+
 # path
 export PATH="$HOME/.config/bin:$PATH"
 
 # completions
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit &> /dev/null 
 
 # aliases
 alias ls="exa"
-alias ll="exa -l"
+alias ll="exa -l --icons"
 alias la="exa -a"
 alias l="exa -a"
 alias cat="bat -p"
