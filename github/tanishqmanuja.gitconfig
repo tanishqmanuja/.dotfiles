@@ -1,6 +1,0 @@
-[user]
-	name = tanishqmanuja
-	email = tanishqmanuja@gmail.com
-	signingKey = 6C01BA411065C83071B6CF3B16538476B1BEB357
-[commit]
-	gpgsign = true

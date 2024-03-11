@@ -1,0 +1,8 @@
+[user]
+	name = tanishqmanuja
+	email = tanishqmanuja@gmail.com
+	signingKey = ~/.ssh/github/tanishqmanuja.pub
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh

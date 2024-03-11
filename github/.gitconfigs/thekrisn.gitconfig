@@ -2,9 +2,9 @@
 	name = TheKrisn
 	email = odinstarkop@gmail.com
 	signingKey = ~/.ssh/github/TheKrisn.pub
-[url "git@thekrisn.github.com:TheKrisn/"]
-	insteadOf = git@github.com:TheKrisn/
 [commit]
 	gpgsign = true
 [gpg]
 	format = ssh
+[url "git@thekrisn.github.com:TheKrisn/"]
+	insteadOf = git@github.com:TheKrisn/
