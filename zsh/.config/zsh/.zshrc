@@ -14,15 +14,19 @@ export PATH="$HOME/.config/bin:$PATH"
 autoload -Uz compinit && compinit &> /dev/null 
 
 # aliases
-alias ls="exa"
-alias ll="exa -l --icons"
-alias la="exa -a"
-alias l="exa -a"
-alias cat="bat -p"
+if [ -x "$(command -v exa)" ]; then
+  alias ls="exa"
+  alias ll="exa -l --icons"
+  alias la="exa -a"
+  alias l="exa -a"
+fi
+
+if [ -x "$(command -v bat)" ]; then
+  alias cat="bat -p"
+fi
+
 alias vi="nvim"
 alias vim="nvim"
-alias tn="tmux new -As $(basename $(pwd))"
-alias fm="ranger"
 
 # clipboard (MacOS)
 alias pbcopy='xclip -selection clipboard'
