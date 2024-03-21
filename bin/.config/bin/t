@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 if [ "$1" ]; then
   echo "Connecting to $1"
 else
