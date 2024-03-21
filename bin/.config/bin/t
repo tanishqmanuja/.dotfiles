@@ -2,7 +2,7 @@
 
 
 if [ "$1" ]; then
-  sesh connect $session_name
+  echo "Connecting to $1"
 else
   sesh connect $(
     sesh list -zt | fzf-tmux -p 55%,60% \
