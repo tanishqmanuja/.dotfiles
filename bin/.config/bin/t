@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ "$1" ]; then
-  echo "Connecting to $1"
+  sesh connect $1
 else
   sesh connect $(
     sesh list -zt | fzf-tmux -p 55%,60% \
