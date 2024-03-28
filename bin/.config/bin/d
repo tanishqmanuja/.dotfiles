@@ -1,39 +1,39 @@
 #!/usr/bin/env bash
 
-# Get argument for script key/name, default to build
-BUILD_SCRIPT="${1:-dev}"
+# Get argument for script key/name, default to dev
+DEV_SCRIPT="${1:-dev}"
 
 # First, check if the jq command is available
 # AND there is a package.json file in the current directory
 if command -v jq &>/dev/null && [[ -f "package.json" ]]; then
   # if we have jq,
   # then use it to extract the first occurence of a key in package.json's scripts object
-  # that starts with the argument passed in (or build)
-  BUILD_SCRIPT="$(jq \
+  # that starts with the argument passed in (or dev)
+  DEV_SCRIPT="$(jq \
     -r \
-    --arg ds "$BUILD_SCRIPT" \
+    --arg ds "$DEV_SCRIPT" \
     'first(.scripts | keys[] | select(. | test("^\($ds)[^\"]*")))' \
     package.json)"
-  # if this didn't match anything, fallback to build
-  BUILD_SCRIPT="${BUILD_SCRIPT:-build}"
+  # if this didn't match anything, fallback to dev
+  DEV_SCRIPT="${DEV_SCRIPT:-dev}"
 fi
 
 if [ -f package-lock.json ]; then
-  echo "npm run $BUILD_SCRIPT"
-  npm run "$BUILD_SCRIPT"
+  echo "npm run $DEV_SCRIPT"
+  npm run "$DEV_SCRIPT"
 fi
 
 if [ -f yarn.lock ]; then
-  echo "yarn $BUILD_SCRIPT"
-  yarn "$BUILD_SCRIPT"
+  echo "yarn $DEV_SCRIPT"
+  yarn "$DEV_SCRIPT"
 fi
 
 if [ -f pnpm-lock.yaml ]; then
-  echo "pnpm run $BUILD_SCRIPT"
-  pnpm run "$BUILD_SCRIPT"
+  echo "pnpm run $DEV_SCRIPT"
+  pnpm run "$DEV_SCRIPT"
 fi
 
 if [ -f bun.lockb ]; then
-  echo "bun run $BUILD_SCRIPT"
-  bun run "$BUILD_SCRIPT"
+  echo "bun run $DEV_SCRIPT"
+  bun run "$DEV_SCRIPT"
 fi
