@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Get argument for script key/name, default to build
-BUILD_SCRIPT="${1:-build}"
+BUILD_SCRIPT="${1:-dev}"
 
 # First, check if the jq command is available
 # AND there is a package.json file in the current directory
