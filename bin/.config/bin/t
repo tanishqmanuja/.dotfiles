@@ -3,14 +3,15 @@
 if [ "$1" ]; then
   sesh connect $1
 else
-  sesh connect $(
-    sesh list -zt | fzf-tmux -p 55%,60% \
-      --no-sort --border-label ' sesh ' --prompt '⚡  ' \
-      --header '  ^a all ^t tmux ^x zoxide ^f find' \
+  sesh connect "$(
+    sesh list -ictz | fzf-tmux -p 55%,60% \
+      --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
+      --header '  ^a all ^t tmux ^x zoxide ^g config ^f find' \
       --bind 'tab:down,btab:up' \
       --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list)' \
       --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t)' \
       --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z)' \
+      --bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list -ic)' \
       --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -E .git -d 2 -t d . ~/projects)'
-  )
+  )"
 fi

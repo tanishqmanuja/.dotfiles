@@ -59,19 +59,6 @@ function go_win() {
 # exports
 export EDITOR=nvim
 
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
---color=dark
---color=fg:-1,bg:-1,hl:#f38ba8,fg+:-1,bg+:-1,hl+:#f38ba8
---color=info:#cba6f7,prompt:#cba6f7,pointer:#f38ba8,marker:#f38ba8,spinner:#f38ba8
-'
-
-export FZF_TMUX_OPTS='
--p 55%,60%
---color=dark
---color=fg:-1,bg:-1,hl:#f38ba8,fg+:-1,bg+:-1,hl+:#f38ba8
---color=info:#cba6f7,prompt:#cba6f7,pointer:#f38ba8,marker:#f38ba8,spinner:#f38ba8
-'
-
 # starship
 eval "$(starship init zsh)"
 
@@ -97,6 +84,17 @@ esac
 
 #fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_OPTS="\
+--ansi \
+--border=rounded \
+--no-info \
+--prompt '🢖 ' \
+--pointer='🞂 ' \
+--marker=' ' \
+--color='16,bg+:-1,gutter:-1,prompt:5,pointer:5,marker:6,border:4,label:4,header:italic'"
+
+export FZF_TMUX_OPTS="-p 55%,60%"
 
 # zoxide
 eval "$(zoxide init zsh)"
