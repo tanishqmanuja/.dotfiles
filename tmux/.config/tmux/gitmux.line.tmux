@@ -12,6 +12,7 @@ tmux set -g status-justify left
 tmux set -g status-left "#[fg=$thm_love,bold]#{?client_prefix,⸙,}#[fg=$thm_rose,bold]#{?client_prefix,,⸙} #S "
 tmux set -g status-right " #[fg=white,nobold]#(gitmux -cfg $HOME/.config/tmux/gitmux.yaml)"
 tmux set -g status-left-length 200    # increase length (from 10)
+tmux set -g status-right-length 200   # increase length (from 10)
 tmux set -g status-style 'bg=default' # transparent
 
 tmux set -g window-status-current-format "#[fg=$thm_foam]• #W"
