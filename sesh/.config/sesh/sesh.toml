@@ -1,2 +1,6 @@
 [default_session]
 startup_command = "nvim && clear"
+
+[[session]]
+name = "dotfiles"
+path = "~/.dotfiles"
