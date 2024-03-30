@@ -1,5 +1,5 @@
 [default_session]
-startup_command = "nvim && clear"
+startup_command = "nvim +GoToFile && clear"
 
 [[session]]
 name = "dotfiles"
